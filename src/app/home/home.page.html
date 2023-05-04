@@ -1,20 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<ion-content>
+  <div class="flex">
+    <ion-title color="dark">
+      <h1>Memoirs</h1>
     </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
   </div>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-button routerLink="/page1" shape="round" color="light">Go to Notes</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button routerLink="/login" shape="round" color="light">Log In</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
+
+ <!-- <ion-button routerLink="/login" shape="round" color="light">Go to Log In</ion-button>
+    <ion-button routerLink="/login" shape="round" color="light">Go to Log In</ion-button> -->
+
+
