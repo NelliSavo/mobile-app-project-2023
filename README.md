@@ -2,4 +2,4 @@
 
 University course project where I designed a fictional memo application
 
-The mobile application consists of a welcome page, a log in page, a home page and a note page.
+The mobile application consists of welcome page, log in page, home page and note page.
