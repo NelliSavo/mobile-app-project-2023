@@ -1,0 +1,48 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<ion-content class="ion-padding">
+<ion-menu contentId="main-content">
+    <ion-header collapse="fade">
+      <ion-toolbar>
+        <ion-title>Edit</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-button shape="round" color="primary"><ion-icon name="text-outline"></ion-icon>
+        <span class="button-text">Text</span></ion-button>
+      <ion-item-divider></ion-item-divider>
+      <ion-button shape="round" color="primary"><ion-icon name="mic-outline"></ion-icon>
+        <span class="button-text">Audio</span></ion-button>
+      <ion-item-divider></ion-item-divider>
+      <ion-button shape="round" color="primary"><ion-icon name="camera-outline"></ion-icon>
+        <span class="button-text">Picture</span></ion-button>
+      <ion-item-divider></ion-item-divider>
+      <ion-button shape="round" color="primary"><ion-icon name="trash-outline"></ion-icon>
+        <span class="button-text">Delete</span></ion-button>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header collapse="fade">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="dark"></ion-menu-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon name="heart-outline" color="dark" ></ion-icon>
+          </ion-button>
+          <ion-button routerLink="/page1">
+          <ion-icon name="arrow-back-outline" color="dark"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <h1>Sunflowers</h1>
+      <p>Remember to buy sunflower seeds for mom!</p>
+      <div class="container">
+      <img src="assets/images/gerome-bruneau-RPmWEtZLh7U-unsplash.jpg" alt="Sunflowers">
+      </div>
+      <p>Plant during April-June.</p>
+    </ion-content>

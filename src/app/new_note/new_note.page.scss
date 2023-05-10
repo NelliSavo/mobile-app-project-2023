@@ -1,0 +1,45 @@
+ion-menu::part(backdrop) {
+    background-color:#D7E334;
+    
+}
+ion-menu::part(container) {
+    border-radius: 0 20px 20px 0;
+    box-shadow: 120px 120px 120px 120px white;
+}
+ion-content{
+    --background: #D7E334;   
+}   
+.button-text {
+    margin-left: 20px;
+}
+span{
+    font-family: 'DM Sans', sans-serif;
+}
+h1{
+    font-family: 'DM Sans', sans-serif;
+    padding-left: 20px;
+} 
+p{
+    font-family: 'DM Sans', sans-serif;
+    padding-left: 20px;
+}
+ion-button{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+ion-item-divider{
+    --background: #D7E334;
+}
+ion-item {
+    --border-radius: 12px;
+    --min-height: 64px; 
+    --text-align: left;
+}
+ion-input {
+    font-family: 'DM Sans', sans-serif;
+} 
+ion-textarea {
+    padding-top: 20px;
+    font-family: 'DM Sans', sans-serif;
+}

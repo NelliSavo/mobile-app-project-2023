@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: Page1Component
-  }
+  },
 ];
 
 @NgModule({

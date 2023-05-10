@@ -1,3 +1,48 @@
-<p>
-  page1 works!
-</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<ion-content class="ion-padding">
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button shape="round" color="primary">Favorites</ion-button>
+    <ion-item-divider></ion-item-divider>
+    <ion-button shape="round" color="primary">Monthly view</ion-button>
+    <ion-item-divider></ion-item-divider>
+    <ion-button shape="round" color="primary">Recently deleted</ion-button>
+    <ion-item-divider></ion-item-divider>
+    <ion-button routerLink="/home" shape="round" color="primary">Log out</ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="dark"></ion-menu-button>
+      </ion-buttons>
+      <ion-toolbar>
+      <ion-title>Notes</ion-title>
+      </ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding"> 
+      <ion-searchbar color="light" [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
+    <ion-item-divider></ion-item-divider>
+    <ion-list>
+      <ion-item *ngFor="let result of results">
+        <ion-button class="wider-button" (click)="goToDetailsPage(result)" expand="block" size="default" color="primary" shape="round">
+          <ion-label>{{ result.title }}</ion-label>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div style="display: flex; justify-content: center;">
+    <ion-button routerLink="/new_note" style="width: 250px; position: absolute; bottom: 20px; text-align: center;" shape="round">
+      +
+    </ion-button>
+  </div> 
+</div>

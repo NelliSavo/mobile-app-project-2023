@@ -3,34 +3,25 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <ion-content class="ion-padding">
 	<div class="flex">
-<!--	  <div class="img-flex">
-		/<img src="../../assets/logo.jpg"/> 
-	  </div> -->
 	  <ion-toolbar>
 		<ion-title>Log In</ion-title>
 	  </ion-toolbar>
 	  <div>
-  
 		<ion-item fill="outline">
 		  <ion-label position="floating">Email</ion-label>
-		  <ion-input></ion-input>
+		  <ion-input type="email" [(ngModel)]="email"></ion-input>
 		</ion-item>
 		<div class="margin"></div>
 		<ion-item fill="outline">
 		  <ion-label position="floating">Password</ion-label>
-		  <ion-input type="password"></ion-input>
+		  <ion-input type="password" [(ngModel)]="password"></ion-input>
 		</ion-item>
 		<div class="margin"></div>
-		<ion-button routerLink="/page1.component" shape="round" color="primary">LOGIN</ion-button>
+		<ion-button (click)="login()" shape="round" color="primary">LOGIN</ion-button>
+		<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
 	  </div>
-	  <!-- class="btn-login" -->
-	  <!-- Forgot password 
-	  <div class="forgot">
-		<p>Forgot password?</p>
-	  </div> -->
-	  <!-- Footer signup link 
-	     <div class="footer">
-		Dont't have account? <span routerLink="/signup">SIGNUP</span>
-	  </div> -->
+	  <div>
+		<h6>or continue with</h6>
+	  </div>
 	</div>
   </ion-content>

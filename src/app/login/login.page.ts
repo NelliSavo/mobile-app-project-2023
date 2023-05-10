@@ -9,52 +9,28 @@ import { Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-//  credentials: FormGroup;
+export class LoginPage {
 
-  constructor(){}
-//    private fb: FormBuilder,
-//    private AuthService: AuthService,
-//    private alertController: AlertController,
-//    private router: Router,
-//    private loadingController: LoadingController
-//  ) { }
+  email: string = '';
+  password: string = '';
+  errorMessage: string = '';
 
-  ngOnInit() {
-}//    this.credentials = this.fb.group({
-}//      email:['nelli.savolainen@info.com', [Validators.required, Validators.email]],
-//      password:['Nelli90', [ Validators.required, Validators.minLength(6)]],
-//    });
-    
-//  }
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+    ) {}
 
-//  async login() {
-//		const loading = await this.loadingController.create();
-//		await loading.present();
-
-//		this.AuthService.login(this.credentials.value).subscribe(
-//			async (res: any) => {
-//				await loading.dismiss();
-//				this.router.navigateByUrl('/tabs', { replaceUrl: true });
-//			},
-//			async (res: { error: { error: any; }; }) => {
-//				await loading.dismiss();
-//				const alert = await this.alertController.create({
-//					header: 'Login failed',
-//					message: res.error.error,
-//					buttons: ['OK']
-//				});
-
-//				await alert.present();
-
-//      }
-//    );
-// }     
-
-//get email() {
-//  return this.credentials.get('email');
-//}
-//get password() {
-//  return this.credentials.get('password');
-//}
-//}
+  login() {
+    this.authService.login(this.email, this.password).subscribe(
+      (authenticated) => {
+        if (authenticated) {
+          // Authentication succeeded, navigate to the home page
+          this.router.navigate(['/page1']);
+        } else {
+          // Authentication failed, show an error message
+          this.errorMessage = 'Invalid email or password';
+        }
+      }
+    );
+  }
+}

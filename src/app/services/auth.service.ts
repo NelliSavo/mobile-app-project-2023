@@ -4,35 +4,22 @@ import {
 	signInWithEmailAndPassword,
 	signOut
 } from '@angular/fire/auth';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
-	constructor(private auth: Auth) {}
 
-//	async register({ email, password }) {
-//		try {
-//			const user = await createUserWithEmailAndPassword(this.auth, email, password);
-//			return user;
-//		} catch (e) {
-//			return null;
-//		}
-//	}
-
-	async login({ email }: { email: string }, password: string) {
-		try {
-			const user = await signInWithEmailAndPassword(this.auth, email, password);
-			return user;
-		} catch (e) {
-			return null;
-		}
-	}
-
-	logout() {
-		return signOut(this.auth);
-	}
-}
-
-export class Note {
+  login(email: string, password: string): Observable<boolean> {
+    // Replace this with your own authentication logic
+    if (email === 'user@example.com' && password === 'password') {
+      // Authentication succeeded
+      return of(true).pipe(delay(2000)); // Add a delay to simulate a server response
+    } else {
+      // Authentication failed
+      return of(false).pipe(delay(2000)); // Add a delay to simulate a server response
+    }
   }
+}	
