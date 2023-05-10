@@ -13,7 +13,7 @@ import { delay } from 'rxjs/operators';
 export class AuthService {
 
   login(email: string, password: string): Observable<boolean> {
-    // Replace this with your own authentication logic
+    
     if (email === 'user@example.com' && password === 'password') {
       // Authentication succeeded
       return of(true).pipe(delay(2000)); // Add a delay to simulate a server response
